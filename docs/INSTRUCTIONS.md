@@ -1,6 +1,6 @@
 # The Game of Tones chapter page
 
-Bouw de chapter page van de The Game of Tones Web App
+Bouw de chapter page van The Game of Tones Web App
 
 ## Context
 Deze leertaak hoort bij sprint Fix the Flow. Dit is een autonomous leertaak die je individueel uitvoert voor de The Game of Tones.
