@@ -8,7 +8,7 @@ Deze leertaak hoort bij sprint Fix the Flow. Dit is een autonomous leertaak die 
 ## Briefing
 The Game of Tones is een interactieve lesmethode muziekimprovisatie die zelfstandig gebruikt kan worden op een tablet of computer/laptop (en later wellicht mobiel). Aanvankelijk schreef de opdrachtgever deze methode in boekvorm, maar bij een digitale versie lagen veel kansen.
 
-Van deze digitale versie is een interactief prototype gemaakt in een prototypeprogramma, die in code uitgewerkt moet worden. Hiervoor zullen de basisschermen als uitgangspunt worden genomen. Voor deze sprint ligt de focus op de chapter page. Op deze pagina kan je tussen verschillende secties navigeren door middel van een zogenaamd onion menu. Bouw deze pagina en test de werking ervan.
+Van deze digitale versie is een interactief prototype gemaakt in een prototypeprogramma, die in code uitgewerkt moet worden. Hiervoor zullen de basisschermen als uitgangspunt worden genomen. Voor deze sprint ligt de focus op de chapter page. Op deze pagina kan je tussen verschillende secties navigeren door middel van een zogenaamd inline onion menu. Bouw deze pagina en test de werking ervan.
 
 Je presenteert je bevindingen in een werkend HTML, CSS en JavaScript prototype.
 
