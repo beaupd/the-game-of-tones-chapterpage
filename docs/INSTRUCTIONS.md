@@ -1,6 +1,6 @@
 # The Game of Tones chapter page
 
-![The Game of Tones](the-game-of-tones.png)
+![The Game of Tones](/the-game-of-tones.png)
 
 Bouw de chapter page van The Game of Tones Web App
 
