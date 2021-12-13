@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volumes",
+  "info": {
+    "singularName": "volume",
+    "pluralName": "volumes",
+    "displayName": "volume",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "intro": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::les-content.les-content",
+      "inversedBy": "volume"
+    },
+    "title": {
+      "type": "string"
+    },
+    "volume": {
+      "type": "integer"
+    },
+    "chapters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chapter.chapter",
+      "mappedBy": "volume"
+    },
+    "les_contents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::les-content.les-content",
+      "mappedBy": "from_volume"
+    }
+  }
+}

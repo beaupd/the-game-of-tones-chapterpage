@@ -2,13 +2,14 @@ import Main from "../components/layouts/Main"
 import Image from "next/image"
 import HorizontalDots from "../components/navigators/HorizontalDots"
 import {useState} from "react"
+import OnionMenu from "../components/navigators/OnionMenu"
 
 const Home = () => {
     const [navData, setNavData] = useState([
-        { text: "Intro", link: "/chapters/1/intro", unlocked: true, isActive: true }, 
-        { text: "1", link: "/chapters/1/1", unlocked: true, isActive: false }, 
-        { text: "2", link: "/chapters/1/2", unlocked: true, isActive: false }, 
-        { text: "3", link: "/chapters/1/3", unlocked: true, isActive: false }
+        { text: "Intro", link: "/chapters/1/intro", unlocked: true, isActive: true },
+        { text: "1", link: "/chapters/1", unlocked: true, isActive: false },
+        { text: "2", link: "/chapters/2", unlocked: true, isActive: false },
+        { text: "3", link: "/chapters/3", unlocked: true, isActive: false }
     ])
 
     return (
@@ -23,7 +24,10 @@ const Home = () => {
                 />
                 <div className="absolute bg-white opacity-30 w-full h-full top-0 left-0"></div>
             </div>
+
+
             <h1 className="z-10 relative text-8xl">Home</h1>
+            <OnionMenu/>
             <button onClick={()=>{navData[0].isActive = false}} className="relative z-50">Change</button>
             <HorizontalDots items={navData}/>
             <h3 className="relative text-white text-2xl mt-3">Chapters</h3>
