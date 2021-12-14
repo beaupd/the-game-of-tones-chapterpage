@@ -25,19 +25,19 @@ Hieronder staan alle geintegreerde of bedachte functies onder categoriën van pr
 - [ ] 
 #### Should have
 - [x] Home circle animatie ui-laag binnen en buiten.
-- [] 
-- [] 
-- []
+- [ ] pad van subchapter naar subchapter om progress te weergeven binnen home navigatie.
+- [ ] 
+- [ ] 
 #### Could have
 - [x] Content management system.
 - [ ] Locked to unlocked states of subchapters.
-- [ ] Locked to unlocked states of chapters .
-- []
+- [ ] Locked to unlocked states of chapters.
+- [ ] animatie tussen paden van subchapters binnen home navigatie.
 #### Won't have
-- [] Volume navigatie.
-- [] Interactive components (jsx?) via cms in de content van een les.
-- [] 
-- []
+- [ ] Volumes navigatie.
+- [ ] Interactive components (jsx?) via cms in de content van een les.
+- [ ] 
+- [ ] 
 
 ## Kenmerken
 Voor dit project heb ik NextJS gebruikt, NextJS is een framework gebouwd op React; React is een open-source, front end, javascript library om makkelijk component based user interface en UI te maken. Met NextJS kan je snel en gemakkelijk hybrid static & server rendering en bijvoorbeeld dynamic routing systemen maken. Om mijn workflow te optimaliseren heb ik TailwindCSS gebruikt dit is een node package die er voor zorgt dat ik niet uit de html of in dit geval JSX-file hoef. Met TailwindCSS hoef je alleen maar classnames toe te voegen en dan compiled die automatisch het minimum css nodig voor de components die die classnames gebruiken. Ook heb ik voor animaties en interactieve element framer-motion gebruikt.
