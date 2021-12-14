@@ -40,8 +40,7 @@ Hieronder staan alle geintegreerde of bedachte functies onder categoriën van pr
 - []
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
-Voor dit project heb ik NextJS gebruikt, NextJS is een framework gebouwd op React; React is een open-source, front end, javascript library om makkelijk component based user interface en UI te maken. Met NextJS kan je snel en gemakkelijk hybrid static & server rendering en bijvoorbeeld dynamic routing systemen maken. Om mijn workflow te optimaliseren heb ik TailwindCSS gebruikt dit is een node package die er voor zorgt dat ik niet uit de html of in dit geval JSX-file hoef. Met TailwindCSS hoef je alleen maar classnames toe te voegen en dan compiled die automatisch het minimum css nodig voor de components die die classnames gebruiken.
+Voor dit project heb ik NextJS gebruikt, NextJS is een framework gebouwd op React; React is een open-source, front end, javascript library om makkelijk component based user interface en UI te maken. Met NextJS kan je snel en gemakkelijk hybrid static & server rendering en bijvoorbeeld dynamic routing systemen maken. Om mijn workflow te optimaliseren heb ik TailwindCSS gebruikt dit is een node package die er voor zorgt dat ik niet uit de html of in dit geval JSX-file hoef. Met TailwindCSS hoef je alleen maar classnames toe te voegen en dan compiled die automatisch het minimum css nodig voor de components die die classnames gebruiken. Ook heb ik voor animaties en interactieve element framer-motion gebruikt.
 
 ## Installatie
 
