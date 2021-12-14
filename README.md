@@ -36,7 +36,7 @@ Hieronder staan alle geintegreerde of bedachte functies onder categoriën van pr
 #### Won't have
 - [ ] Volumes navigatie.
 - [ ] Interactive components (jsx?) via cms in de content van een les.
-- [ ] 
+- [ ] Register and Login systeem met het CMS. Met nextjs _Middleware is dit best makkelijk te realiseren.
 - [ ] 
 
 ## Kenmerken
