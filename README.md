@@ -17,23 +17,24 @@ Interactive webapp voor Game of Tones met Content Management System
 ### Functies van het project
 Hieronder staan alle geintegreerde of bedachte functies onder categoriën van prioriteit. Voor deze prioriteiten systeem is de methode [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) gebruikt. Deze methode heeft 4 categoriën van prioriteit: Must have, Should have, Could have en Won't have.
 #### Must have
-- [x] Home navigatie waarmee je de verschillende chapters kan zien
-- [x] Home navigatie waarmee je de verschillende subchapters kan zien van de chapters
-- [] 
-- []
+- [x] Home navigatie waarmee je de verschillende chapters kan zien.
+- [x] Home navigatie waarmee je de verschillende subchapters kan zien van de chapters.
+- [] Compleet werkende navigatie flow van de outlines van het project; Chapters, subchapter en de 4 lessen van de subchapters.
+- [x] Styleguide
+- [ ] 
 #### Should have
-- [] 
+- [x] Home circle animatie ui-laag binnen en buiten.
 - [] 
 - [] 
 - []
 #### Could have
-- [] 
-- [] 
+- [] Locked states of subchapters
+- [] Locked states of chapters
 - [] 
 - []
 #### Won't have
-- [] 
-- [] 
+- [] Volume navigatie.
+- [] Interactive components (jsx?) via cms in de content van een les.
 - [] 
 - []
 
