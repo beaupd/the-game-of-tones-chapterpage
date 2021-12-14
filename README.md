@@ -25,8 +25,8 @@ Hieronder staan alle geintegreerde of bedachte functies onder categoriën van pr
 - [ ] 
 #### Should have
 - [x] Home circle animatie ui-laag binnen en buiten.
-- [ ] pad van subchapter naar subchapter om progress te weergeven binnen home navigatie.
-- [ ] 
+- [ ] Pad van subchapter naar subchapter om progress te weergeven binnen home navigatie.
+- [ ] Progress State om de progressie van een gebruiker te weergeven.
 - [ ] 
 #### Could have
 - [x] Content management system.
