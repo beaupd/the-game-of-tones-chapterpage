@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 
 
-const HorizontalDots = ({ items }) => {
+const HorizontalDots = ({ items, children}) => {
     const [navItems, setNavItems] = useState([])
 
     useEffect(() => {
@@ -14,7 +14,8 @@ const HorizontalDots = ({ items }) => {
         <nav className="z-50 relative">
             <ul className="flex flex-row justify-center relative overflow-hidden">
                 <div className="absolute top-1/2 -translate-y-1/2 bg-white h-2 w-11/12 z-10 ml-5 "></div>
-                {navItems.map((item, i) => {
+                {children}
+                {/* {navItems.map((item, i) => {
                     return (
                         <li key={i} className="inline relative z-20 pl-4">
                             <Link href={item.link}>
@@ -24,7 +25,7 @@ const HorizontalDots = ({ items }) => {
                             </Link>
                         </li>
                     )
-                })}
+                })} */}
             </ul>
         </nav>
     )

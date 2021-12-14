@@ -3,9 +3,11 @@ import Image from "next/image";
 import HorizontalDots from "../components/navigators/HorizontalDots";
 import { useState } from "react";
 import OnionMenu from "../components/navigators/OnionMenu";
+import Link from "next/link"
 
 const Home = ({ data }) => {
     const [navData, setNavData] = useState(data.navData);
+    const [isAt, setAt] = useState(0)
     return (
         <Main className="bg-black flex justify-center items-center flex-col">
             <div className="absolute w-full h-full left-0 top-0 z-0">
@@ -20,7 +22,7 @@ const Home = ({ data }) => {
             </div>
 
             <h1 className="z-10 relative text-8xl">Home</h1>
-            <OnionMenu progress={data.progress}/>
+            <OnionMenu progress={data.progress} at={isAt}/>
             <button
                 onClick={() => {
                     navData[0].isActive = false;
@@ -29,7 +31,12 @@ const Home = ({ data }) => {
             >
                 Change
             </button>
-            <HorizontalDots items={navData} />
+            <HorizontalDots items={navData}>
+                <li className="inline relative z-20 pl-4"><Link  href="/1/"><a className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors active:bg-purple-500 ${isAt == 0 ? "bg-purple-500" : "bg-gray-300"}`}>Intro</a></Link></li>
+                <li className="inline relative z-20 pl-4"><button className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors active:bg-purple-500 ${isAt == 1 ? "bg-purple-500" : "bg-gray-300"}`} onClick={()=>setAt(1)}>1</button></li>
+                <li className="inline relative z-20 pl-4"><button className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors active:bg-purple-500 ${isAt == 2 ? "bg-purple-500" : "bg-gray-300"}`} onClick={()=>setAt(2)}>2</button></li>
+                <li className="inline relative z-20 pl-4"><button className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors active:bg-purple-500 ${isAt == 3 ? "bg-purple-500" : "bg-gray-300"}`} onClick={()=>setAt(3)}>3</button></li>
+            </HorizontalDots>
             <h3 className="relative text-white text-2xl mt-3">Chapters</h3>
         </Main>
     );

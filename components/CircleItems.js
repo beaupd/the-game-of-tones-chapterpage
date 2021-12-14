@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Lock from "./icons/Lock";
 
-const CircleItems = ({ center, progress, chapter, volume }) => {
+const CircleItems = ({ center, progress, chapter, volume, variants, animate }) => {
     const itemsContainerRef = useRef();
     const [atItem, setItem] = useState(
         progress.intro == true
@@ -42,13 +42,13 @@ const CircleItems = ({ center, progress, chapter, volume }) => {
                 "items-center",
                 "justify-center"
             );
-            console.log(i, atItem);
+            // console.log(i, atItem);
             if (i <= atItem && i != 0) {
                 // item.getElementsByTagName("span")[0].style.display = "none"
                 let lock = `lock${i}`
                 
                 setLockStates(prevState => ({...prevState, [lock]: "show"}))
-                console.log(lock, "\n\n", lockStates)
+                // console.log(lock, "\n\n", lockStates)
                 // console.log(item.getElementsByTagName("span"))
             }
             if (firstCenter && i == 0) {
@@ -70,7 +70,9 @@ const CircleItems = ({ center, progress, chapter, volume }) => {
     return (
         <>
             {isCenter ? (
-                <ul
+                <motion.ul
+                 variants={variants}
+                 animate={animate}
                     ref={itemsContainerRef}
                     className="w-full h-full flex justify-center items-center text-xl font-bold"
                 >
@@ -117,10 +119,12 @@ const CircleItems = ({ center, progress, chapter, volume }) => {
                         </span>
                         <Link href={`/${chapter}/4`}>4</Link>
                     </li>
-                </ul>
+                </motion.ul>
             ) : (
-                <ul
+                <motion.ul
+                variants={variants}
                     ref={itemsContainerRef}
+                    animate={animate}
                     className="w-full h-full flex justify-center items-center text-xl font-bold"
                 >
                     <li>
@@ -173,7 +177,7 @@ const CircleItems = ({ center, progress, chapter, volume }) => {
                         </span>
                         <Link href={`/${chapter}/5`}>5</Link>
                     </li>
-                </ul>
+                </motion.ul>
             )}
         </>
     );
