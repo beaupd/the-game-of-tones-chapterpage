@@ -1,10 +1,35 @@
-const Layer = ({ data }) => {
+import LesLayout from "../../../../components/layouts/Les"
+
+const Les = ({ data }) => {
+
+    const typeLes = {
+        "theory": "blue",
+         "practice": "green",
+         "action": "yellow",
+         "exercise": "orange"
+    }[data.attributes.les]
+
+
+    console.log(data.attributes.les,typeLes)
+
+
     return (
-        <>{data.attributes.content}</>
+        <LesLayout type={typeLes} title={`In ${data.attributes.les}`}>
+            <main className="w-9/12">
+                <header className="flex flex-row w-max">
+                    <h1 className="text-6xl font-bold">
+                        {data.attributes.title}
+                    </h1>
+                    <span className="text-6xl font-extralight">{data.attributes.subtitle}</span>
+                </header>
+
+                <p className="mt-5">{data.attributes.content}</p>
+            </main>
+        </LesLayout>
     )
 }
 
-export default Layer
+export default Les
 
 export async function getStaticPaths() {
 
@@ -18,15 +43,15 @@ export async function getStaticPaths() {
     const paths = []
 
     data.forEach((les) => {
-        
+
         const attr = les.attributes
-        const isTrue = () => {return attr.subchapter_theory.data || attr.subchapter_practice.data || attr.subchapter_action.data || attr.subchapter_exercise.data}
+        const isTrue = () => { return attr.subchapter_theory.data || attr.subchapter_practice.data || attr.subchapter_action.data || attr.subchapter_exercise.data }
         // console.log(attr.subchapter_theory.data)
         if (isTrue()) {
             // console.log([attr.subchapter_theory.data, attr.subchapter_practice.data, attr.subchapter_action.data, attr.subchapter_exercise.data].map((i)=>{if(i){return(i)}}))
             // console.log(les.id)
             paths.push({
-                params:{
+                params: {
                     les: attr.les,
                     subchapter: ((isTrue()).attributes.subchapter).toString(),
                     chapter: (attr.from_chapter.data.attributes.chapter).toString(),

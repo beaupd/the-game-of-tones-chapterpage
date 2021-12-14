@@ -6,6 +6,10 @@ import PurpleButton from "../components/utilities/PurpleButton"
 import { useRouter } from 'next/router'
 import HorizontalDots from "../components/navigators/HorizontalDots"
 import OnionMenu from "../components/navigators/OnionMenu"
+import Lock from "../components/icons/Lock"
+import Music from "../components/icons/Music"
+import MenuCircle from "../components/icons/MenuCircle"
+import User from "../components/icons/User"
 
 const Styleguide = () => {
     const router = useRouter()
@@ -44,6 +48,22 @@ const Styleguide = () => {
 
                         <ul>
                             <li><Spinner /></li>
+                        </ul>
+
+                    </section>
+
+                    <section className="my-24">
+                        <header className="mb-5">
+                            <h2 className="text-xl">Icons:</h2>
+                        </header>
+
+                        <ul className="flex flex-row w-full">
+                            <li className="px-5"><Lock/></li>
+                            <li className="px-5"><Lock active={true}/></li>
+                            <li className="px-5"><Music width="50" height="50"/></li>
+                            <li className="px-5"><MenuCircle width="50" height="50"/></li>
+                            <li className="px-5"><User/></li>
+
                         </ul>
 
                     </section>

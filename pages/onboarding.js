@@ -3,6 +3,7 @@ import PurpleButton from "../components/utilities/PurpleButton"
 
 
 const Onboarding = () => {
+
     return (
         <Main className="flex items-center justify-center flex-col">
             <h1 className="text-4xl">Onboarding</h1>
