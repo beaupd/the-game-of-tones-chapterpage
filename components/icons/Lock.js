@@ -32,10 +32,10 @@ const Lock = ({
       opacity: 1
     },
     show: {
-      opacity: 0.5,
+      opacity: 0,
       transition: {
         type: "spring",
-        stiffness: 60
+        stiffness: 30
       }
     }
 
@@ -61,6 +61,7 @@ const Lock = ({
       strokeLinejoin="round"
       variants={lockWhole}
       animate={controls}
+      className={className}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <rect x="5" y="11" width="14" height="10" rx="2" />

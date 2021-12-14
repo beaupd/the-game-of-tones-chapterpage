@@ -1,34 +1,29 @@
 import Image from "next/image";
 import CircleItems from "../CircleItems";
-import {useState, useEffect} from "react"
+import {useState, useEffect, useContext} from "react"
+import ContextProvider, { GlobalContext } from "../providers/ContextProvider";
 
-const OnionMenu = ({ progress, at }) => {
-
-    const [prog, setProgress] = useState(progress)
-    const [atItem, setItem] = useState(at)
+const OnionMenu = ({}) => {
+    const [atChapter, setAtChapter] = useContext(GlobalContext);
     const [itemsControl, setItemsControl] = useState({
-        items1: "show",
+        items1: "hidden",
         items2: "hidden",
         items3: "hidden"
     })
 
-    useEffect(() =>{
-        setProgress(progress)
-    },[progress])
-
     useEffect(()=>{
         for(let i = 1; i <= 3; i++) {
             let it = `items${i}`
-            if (i < at) {
+            if (i < atChapter) {
                 setItemsControl(prevState => ({...prevState, [it]:"hide"}))
-            } else if (i==at) {
+            } else if (i==atChapter) {
                 setItemsControl(prevState => ({...prevState, [it]:"show"}))
             }else{
                 setItemsControl(prevState => ({...prevState, [it]:"hidden"}))
             }
         }
-        console.log(at, itemsControl)
-    },[at])
+        // console.log(at, itemsControl)
+    },[atChapter])
 
     const circulairMenu = {
         hidden: {
@@ -66,9 +61,9 @@ const OnionMenu = ({ progress, at }) => {
             <div className="bg-purple-500 bg-opacity-60 w-88 h-88 z-30 absolute rounded-full"></div>
 
             <div className="z-50">
-                <CircleItems variants={circulairMenu} animate={itemsControl.items1} center={true} progress={prog} chapter="1" volume="1"/>
-                <CircleItems variants={circulairMenu} animate={itemsControl.items2} center={false} progress={prog} chapter="2" volume="1"/>
-                <CircleItems variants={circulairMenu} animate={itemsControl.items3} center={false} progress={prog} chapter="3" volume="1"/>
+                <CircleItems variants={circulairMenu} animate={itemsControl.items1} initial="hidden" center={true} chapter="1" volume="1"/>
+                <CircleItems variants={circulairMenu} animate={itemsControl.items2} initial="hidden" center={false} chapter="2" volume="1"/>
+                <CircleItems variants={circulairMenu} animate={itemsControl.items3} initial="hidden" center={false} chapter="3" volume="1"/>
             </div>
         </div>
     );

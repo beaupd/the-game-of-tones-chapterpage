@@ -10,9 +10,9 @@ const MenuCircle = ({className=""}) => {
           y2="1.023"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0" stop-color="#ccbdbd" />
-          <stop offset=".256" stop-color="#dedede" />
-          <stop offset="1" stop-color="gray" />
+          <stop offset="0" stopColor="#ccbdbd" />
+          <stop offset=".256" stopColor="#dedede" />
+          <stop offset="1" stopColor="gray" />
           <stop offset="1" />
         </linearGradient>
       </defs>
