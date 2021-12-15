@@ -11,7 +11,8 @@ import { motion } from "framer-motion";
 
 const Home = ({ data }) => {
     const [navData, setNavData] = useState(data.navData);
-    const [atChapter, setAtChapter] = useContext(GlobalContext);
+    const {chapter, subChapter} = useContext(GlobalContext);
+    const [atChapter, setAtChapter] = chapter;
 
     return (
         <Main className="bg-black flex justify-center items-center flex-col">
@@ -104,7 +105,7 @@ export async function getServerSideProps(context) {
     // console.log(context)
     const res = await fetch("http://localhost:1337/api/chapters?populate=*");
     const res_json = await res.json();
-
+    
     
     const data = {};
 

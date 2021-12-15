@@ -4,18 +4,12 @@ import { motion } from "framer-motion";
 import Lock from "./icons/Lock";
 import ContextProvider, { GlobalContext } from "./providers/ContextProvider";
 
-const CircleItems = ({
-    center,
-    chapter,
-    volume,
-    variants,
-    animate,
-}) => {
+const CircleItems = ({ center, volume, variants, animate, circleChapter }) => {
     const itemsContainerRef = useRef();
-    const [atSubchapter, setAtSubchapter] = useContext(GlobalContext);
-    const [atChapter, setAtChapter] = useContext(GlobalContext);
+    const { chapter, subChapter } = useContext(GlobalContext);
+    const [atChapter, setAtChapter] = chapter;
+    const [atSubchapter, setAtSubchapter] = subChapter;
     const [atItem, setItem] = useState(atSubchapter);
-    
 
     const [lockStates, setLockStates] = useState({
         lock1: "hidden",
@@ -44,7 +38,7 @@ const CircleItems = ({
 
     useEffect(() => {
         const items = itemsContainerRef.current.children;
-        const space = center ? 360 / (items.length-1) : 360 / items.length;
+        const space = 360 / items.length;
         const offset = 135;
         const spaceCenter = 120;
         const firstCenter = center ? true : false;
@@ -64,17 +58,20 @@ const CircleItems = ({
                 "justify-center"
             );
             let lock = `lock${i}`;
-            if ((i <= atItem && i != 0) || atChapter > chapter) {
-                if (chapter > atChapter) {
-                    newLockStates[lock] = "hidden";
-                } else {
+            if (circleChapter == atChapter) {
+                if (i <= atItem) {
                     newLockStates[lock] = "show";
+                } else {
+                    newLockStates[lock] = "hidden";
                 }
-            } else {
+            } else if (circleChapter > atChapter) {
                 newLockStates[lock] = "hidden";
+                // console.
+            } else {
+                newLockStates[lock] = "show";
             }
             if (firstCenter && i == 0) {
-                // item
+                // console.log(items)
             } else {
                 item.style.transform = `rotate(${
                     space * index + offset
@@ -87,6 +84,7 @@ const CircleItems = ({
                 index++;
             }
         }
+        console.log(circleChapter,newLockStates)
         setLockStates(newLockStates);
     }, [atItem]);
 
@@ -100,7 +98,22 @@ const CircleItems = ({
                     className="w-full h-full flex justify-center items-center text-xl font-bold"
                 >
                     <li>
-                        <Link href={`/${volume}/${chapter}/`}>Intro</Link>
+                        <Link href={`/${volume}/${circleChapter}/`}>Intro</Link>
+                    </li>
+                    <li>
+                        <motion.span
+                            variants={lockContainer}
+                            initial="hidden"
+                            animate={lockStates.lock1}
+                            className="absolute bg-white z-50"
+                        >
+                            <Lock
+                                control={lockStates.lock1}
+                                width="30"
+                                height="30"
+                            />
+                        </motion.span>
+                        <Link href={`/${volume}/${circleChapter}/1`}>1</Link>
                     </li>
                     <li>
                         <motion.span
@@ -115,7 +128,7 @@ const CircleItems = ({
                                 height="30"
                             />
                         </motion.span>
-                        <Link href={`/${chapter}/1`}>1</Link>
+                        <Link href={`/${volume}/${circleChapter}/2`}>2</Link>
                     </li>
                     <li>
                         <motion.span
@@ -130,7 +143,7 @@ const CircleItems = ({
                                 height="30"
                             />
                         </motion.span>
-                        <Link href={`/${chapter}/2`}>2</Link>
+                        <Link href={`/${volume}/${circleChapter}/3`}>3</Link>
                     </li>
                     <li>
                         <motion.span
@@ -145,30 +158,15 @@ const CircleItems = ({
                                 height="30"
                             />
                         </motion.span>
-                        <Link href={`/${chapter}/3`}>3</Link>
+                        <Link href={`/${volume}/${circleChapter}/4`}>4</Link>
                     </li>
-                    <li>
-                        <motion.span
-                            variants={lockContainer}
-                            initial="hidden"
-                            animate={lockStates.lock5}
-                            className="absolute bg-white z-50"
-                        >
-                            <Lock
-                                control={lockStates.lock5}
-                                width="30"
-                                height="30"
-                            />
-                        </motion.span>
-                        <Link href={`/${chapter}/4`}>4</Link>
-                    </li>
-                    <button
+                    {/* <button
                         onClick={() => {
                             setItem((atItem) => atItem + 1);
                         }}
                     >
                         next
-                    </button>
+                    </button> */}
                 </motion.ul>
             ) : (
                 <motion.ul
@@ -181,8 +179,23 @@ const CircleItems = ({
                         <motion.span
                             variants={lockContainer}
                             initial="hidden"
-                            animate={lockStates.lock1}
+                            animate={lockStates.lock0}
                             className="absolute bg-white z-50 p-5 rounded-full"
+                        >
+                            <Lock
+                                control={lockStates.lock0}
+                                width="30"
+                                height="30"
+                            />
+                        </motion.span>
+                        <Link href={`/${volume}/${circleChapter}/`}>intro</Link>
+                    </li>
+                    <li>
+                        <motion.span
+                            variants={lockContainer}
+                            initial="hidden"
+                            animate={lockStates.lock1}
+                            className="absolute bg-white z-50"
                         >
                             <Lock
                                 control={lockStates.lock1}
@@ -190,7 +203,7 @@ const CircleItems = ({
                                 height="30"
                             />
                         </motion.span>
-                        <Link href={`/${chapter}/`}>intro</Link>
+                        <Link href={`/${volume}/${circleChapter}/2`}>2</Link>
                     </li>
                     <li>
                         <motion.span
@@ -205,7 +218,7 @@ const CircleItems = ({
                                 height="30"
                             />
                         </motion.span>
-                        <Link href={`/${chapter}/2`}>2</Link>
+                        <Link href={`/${volume}/${circleChapter}/3`}>3</Link>
                     </li>
                     <li>
                         <motion.span
@@ -220,14 +233,14 @@ const CircleItems = ({
                                 height="30"
                             />
                         </motion.span>
-                        <Link href={`/${chapter}/3`}>3</Link>
+                        <Link href={`/${volume}/${circleChapter}/4`}>4</Link>
                     </li>
                     <li>
                         <motion.span
                             variants={lockContainer}
                             initial="hidden"
                             animate={lockStates.lock4}
-                            className="absolute bg-white z-50"
+                            className="absolute bg-white z-40"
                         >
                             <Lock
                                 control={lockStates.lock4}
@@ -235,22 +248,7 @@ const CircleItems = ({
                                 height="30"
                             />
                         </motion.span>
-                        <Link href={`/${chapter}/4`}>4</Link>
-                    </li>
-                    <li>
-                        <motion.span
-                            variants={lockContainer}
-                            initial="hidden"
-                            animate={lockStates.lock5}
-                            className="absolute bg-white z-50"
-                        >
-                            <Lock
-                                control={lockStates.lock5}
-                                width="30"
-                                height="30"
-                            />
-                        </motion.span>
-                        <Link href={`/${chapter}/5`}>5</Link>
+                        <Link href={`/${volume}/${circleChapter}/5`}>5</Link>
                     </li>
                 </motion.ul>
             )}

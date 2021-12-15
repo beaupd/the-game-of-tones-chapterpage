@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .activeItem.unclocked ul {
+        opacity: 1;
+        transition:.3s;
+    }
+
+    .inactiveItem ul {
+        opacity: 0;
+        transition:.3s;
+    }
+}
+
 html, body {
     font-family: 'Poppins', sans-serif;
 }
+

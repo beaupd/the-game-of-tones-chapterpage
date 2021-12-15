@@ -1,6 +1,6 @@
 import LesLayout from "../../../../components/layouts/Les";
 
-const Les = ({ data, subchapters }) => {
+const SubchapterIndex = ({ data, subchapters }) => {
     const typeLes = {
         theory: "blue",
         practice: "green",
@@ -32,7 +32,7 @@ const Les = ({ data, subchapters }) => {
     );
 };
 
-export default Les;
+export default SubchapterIndex;
 
 export async function getStaticPaths() {
     // fetch all layers in subchapters in chapters
@@ -60,12 +60,11 @@ export async function getStaticPaths() {
         if (isTrue()) {
             // console.log([attr.subchapter_theory.data, attr.subchapter_practice.data, attr.subchapter_action.data, attr.subchapter_exercise.data].map((i)=>{if(i){return(i)}}))
             // console.log(les.id)
-            // console.log(attr.subchapter_theory.data)
+            console.log(attr.subchapter_theory.data)
             if (attr.subchapter_theory.data) {
                 console.log(attr.subchapter_theory.data)
                 paths.push({
                     params: {
-                        les: "/",
                         subchapter: isTrue().attributes.subchapter.toString(),
                         chapter:
                             attr.from_chapter.data.attributes.chapter.toString(),
@@ -97,13 +96,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     // console.log(params)
     // props for layer in subchapter in chapter
-    // const res = await fetch(`http://localhost:1337/api/les-contents?filters[les]=${params.les}`)
-    const res = await fetch(
-        `http://localhost:1337/api/les-contents?populate=*&filters[les]=${params.les}&filters[subchapter_${params.les}][subchapter]=${params.subchapter}`
-    );
+    const res = await fetch(`http://localhost:1337/api/les-contents?populate=*&filters[les]=theory&filters[subchapter_theory][subchapter]=${params.subchapter}`)
+    // const res = await fetch(
+    //     `http://localhost:1337/api/les-contents?populate=*&filters[les]=${params.les}&filters[subchapter_${params.les}][subchapter]=${params.subchapter}`
+    // );
     const res_json = await res.json();
     const data = res_json.data[0];
-    // console.log(data)
+    // // console.log(data)
     const resChapters = await (
         await fetch(
             `http://localhost:1337/api/chapters?filters[chapter]=${params.chapter}&populate=*`

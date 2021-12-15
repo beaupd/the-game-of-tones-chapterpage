@@ -10,6 +10,10 @@ import Lock from "../components/icons/Lock";
 import Music from "../components/icons/Music";
 import MenuCircle from "../components/icons/MenuCircle";
 import User from "../components/icons/User";
+import Pencil from "../components/icons/Pencil";
+import Gear from "../components/icons/Gear";
+import Running from "../components/icons/Running";
+import Bulb from "../components/icons/Bulb";
 
 const Styleguide = () => {
     const router = useRouter();
@@ -101,19 +105,32 @@ const Styleguide = () => {
 
                         <ul className="flex flex-row w-full">
                             <li className="px-5">
-                                <Lock />
+                                <MenuCircle width="44" height="44" />
                             </li>
                             <li className="px-5">
-                                <Lock active={true} />
+                                <Lock width="44" height="44" />
                             </li>
                             <li className="px-5">
-                                <Music width="50" height="50" />
+                                <Lock width="44" height="44" active={true} />
                             </li>
                             <li className="px-5">
-                                <MenuCircle width="50" height="50" />
+                                <Music width="44" height="44" />
                             </li>
+
                             <li className="px-5">
                                 <User />
+                            </li>
+                            <li className="px-5">
+                                <Gear />
+                            </li>
+                            <li className="px-5">
+                                <Bulb />
+                            </li>
+                            <li className="px-5">
+                                <Pencil />
+                            </li>
+                            <li className="px-5">
+                                <Running />
                             </li>
                         </ul>
                     </section>
@@ -150,17 +167,15 @@ const Styleguide = () => {
                             <li>
                                 <HorizontalDots>
                                     <li className="inline relative z-20 pl-4">
-
-                                            <a
-                                                className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors bg-purple-500 `}
-                                            >
-                                                Intro
-                                            </a>
+                                        <a
+                                            className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors bg-purple-500 `}
+                                        >
+                                            Intro
+                                        </a>
                                     </li>
                                     <li className="inline relative z-20 pl-4">
                                         <button
                                             className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors active:bg-purple-500 bg-gray-300`}
-                                            
                                         >
                                             1
                                         </button>
@@ -168,7 +183,6 @@ const Styleguide = () => {
                                     <li className="inline relative z-20 pl-4">
                                         <button
                                             className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors active:bg-purple-500 bg-gray-300`}
-                                            
                                         >
                                             2
                                         </button>
@@ -176,7 +190,6 @@ const Styleguide = () => {
                                     <li className="inline relative z-20 pl-4">
                                         <button
                                             className={`rounded-full block h-16 w-16  flex justify-center items-center hover:bg-purple-500 transition-colors active:bg-purple-500 bg-gray-300`}
-                                            
                                         >
                                             3
                                         </button>

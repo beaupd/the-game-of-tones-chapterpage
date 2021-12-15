@@ -4,6 +4,8 @@ import Link from "next/link"
 import Main from "../components/layouts/Main"
 import GrayButton from "../components/utilities/GrayButton"
 
+
+
 const Index = () => {
     const [isLoading, setLoading] = useState(false)
 

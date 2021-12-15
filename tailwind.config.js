@@ -33,6 +33,7 @@ module.exports = {
           light: "#F9DDB3"
         },
       },
+
     },
   },
   variants: {

@@ -4,7 +4,8 @@ import {useState, useEffect, useContext} from "react"
 import ContextProvider, { GlobalContext } from "../providers/ContextProvider";
 
 const OnionMenu = ({}) => {
-    const [atChapter, setAtChapter] = useContext(GlobalContext);
+    const {chapter, subChapter} = useContext(GlobalContext);
+    const [atChapter, setAtChapter] = chapter;
     const [itemsControl, setItemsControl] = useState({
         items1: "hidden",
         items2: "hidden",
@@ -61,9 +62,9 @@ const OnionMenu = ({}) => {
             <div className="bg-purple-500 bg-opacity-60 w-88 h-88 z-30 absolute rounded-full"></div>
 
             <div className="z-50">
-                <CircleItems variants={circulairMenu} animate={itemsControl.items1} initial="hidden" center={true} chapter="1" volume="1"/>
-                <CircleItems variants={circulairMenu} animate={itemsControl.items2} initial="hidden" center={false} chapter="2" volume="1"/>
-                <CircleItems variants={circulairMenu} animate={itemsControl.items3} initial="hidden" center={false} chapter="3" volume="1"/>
+                <CircleItems variants={circulairMenu} animate={itemsControl.items1} initial="hidden" center={true} circleChapter="1" volume="1"/>
+                <CircleItems variants={circulairMenu} animate={itemsControl.items2} initial="hidden" center={false} circleChapter="2" volume="1"/>
+                <CircleItems variants={circulairMenu} animate={itemsControl.items3} initial="hidden" center={false} circleChapter="3" volume="1"/>
             </div>
         </div>
     );
