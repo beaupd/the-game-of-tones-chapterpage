@@ -33,13 +33,21 @@ export async function getStaticPaths() {
 
     const paths = [];
 
+    
     data.forEach((chapter) => {
-        let attr = chapter.attributes
+        // console.log(chapter, "\n\n\n\n",chapter.attributes)
+        const c = chapter
+        // console.log(c, c.attributes.volume)
+
+        // const attr = chapter.attributes
+        // console.log(attr.chapter,"oooo")
+        // console.log("fankermank", c)
+        
         // console.log(attr)
         paths.push({
             params: {
-                chapter: attr.chapter.toString(),
-                volume: attr.volume.data.attributes.volume.toString(),
+                chapter: `${c.attributes.chapter}`,
+                volume: `${c.attributes.volume.data.attributes.volume}`,
             },
         })
     });
