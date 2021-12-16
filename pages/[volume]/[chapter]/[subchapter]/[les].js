@@ -87,7 +87,7 @@ export async function getStaticPaths() {
                     });
                 }
             }
-        } catch (e) {}
+        } catch (e) {console.log(les, e)}
     });
 
     // const layers = [] // list of objects of all layers
