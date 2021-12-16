@@ -14,6 +14,8 @@ import Pencil from "../components/icons/Pencil";
 import Gear from "../components/icons/Gear";
 import Running from "../components/icons/Running";
 import Bulb from "../components/icons/Bulb";
+import VerticalDots from "../components/navigators/VerticalDots"
+import SubChapterSubMenu from "../components/navigators/SubChapterSubMenu"
 
 const Styleguide = () => {
     const router = useRouter();
@@ -206,6 +208,11 @@ const Styleguide = () => {
                                     }}
                                     at={1}
                                 />
+                            </li>
+                            <li className="px-14">
+                                <SubChapterSubMenu className="translate-y-32"/>
+                            </li>
+                            <li>
                             </li>
                         </ul>
                     </section>

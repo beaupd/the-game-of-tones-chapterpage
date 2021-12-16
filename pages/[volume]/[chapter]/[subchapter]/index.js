@@ -60,9 +60,9 @@ export async function getStaticPaths() {
         if (isTrue()) {
             // console.log([attr.subchapter_theory.data, attr.subchapter_practice.data, attr.subchapter_action.data, attr.subchapter_exercise.data].map((i)=>{if(i){return(i)}}))
             // console.log(les.id)
-            console.log(attr.subchapter_theory.data)
+            // console.log(attr.subchapter_theory.data)
             if (attr.subchapter_theory.data) {
-                console.log(attr.subchapter_theory.data)
+                // console.log(attr.subchapter_theory.data)
                 paths.push({
                     params: {
                         subchapter: isTrue().attributes.subchapter.toString(),

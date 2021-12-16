@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 import Pencil from "../icons/Pencil";
 import Gear from "../icons/Gear";
 import Running from "../icons/Running";
@@ -7,7 +7,7 @@ import Bulb from "../icons/Bulb";
 const SubChapterSubMenu = ({ className = "", subChapter, chapter, volume }) => {
     return (
         <ul
-            className={`${className} relative flex items-center justify-center -translate-y-2`}
+            className={`${className} relative flex items-center justify-center -translate-y-4`}
         >
             <li className="absolute right-1/2 top-1/2 translate-x-1/2 -translate-y-full">
                 <Link href={`/${volume}/${chapter}/${subChapter}/`}>

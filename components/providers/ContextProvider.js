@@ -4,7 +4,7 @@ export const GlobalContext = createContext()
 
 export default function ContextProvider({children}) {
     const [atChapter, setAtChapter] = useState(1)
-    const [atSubchapter, setAtSubchapter] = useState(1)
+    const [atSubchapter, setAtSubchapter] = useState(3)
     
     return (
         <GlobalContext.Provider

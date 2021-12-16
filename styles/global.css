@@ -3,9 +3,19 @@
 @tailwind utilities;
 
 @layer components {
-    .activeItem.unclocked ul {
+
+    .activeItem {
+        
+    }
+
+    .activeItem ul {
         opacity: 1;
         transition:.3s;
+    }
+
+    .activeItem > a {
+        /* background: transparent; */
+        transition: .3s;
     }
 
     .inactiveItem ul {

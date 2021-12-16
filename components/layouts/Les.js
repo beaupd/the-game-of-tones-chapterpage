@@ -1,11 +1,11 @@
 import MenuCircle from "../icons/MenuCircle";
-import Link from "next/link";
+import Link from "next/link"
 import Music from "../icons/Music";
 import User from "../icons/User";
 import { useRouter } from "next/router";
 import VerticalDots from "../navigators/VerticalDots";
 import ContextProvider, { GlobalContext } from "../providers/ContextProvider";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import Image from "next/image";
 import SubChapterSubMenu from "../navigators/SubchapterSubMenu";
 
@@ -20,20 +20,31 @@ const LesLayout = ({ children, type, title, subchapters }) => {
     const [isLocked, setLocked] = useState({})
     const initLockedStates = {}
     
-
-    if (query.chapter == atChapter) {
-        [...Array(subchapters)].forEach(c => {
-
-        } )
-    } else if (query.chapter > atChapter){
-        [...Array(subchapters)].forEach(c => {
-
-        } )
-    } else {
-        [...Array(subchapters)].forEach(c => {
-
-        } )
-    }
+    useEffect(()=> {
+        if (query.chapter == atChapter) {
+            [...Array(subchapters)].forEach((c,i)=> {
+                let sub = `subchapter${i}`
+                if (i <= atSubchapter) {
+                    initLockedStates[sub] = true
+                } else {
+                    initLockedStates[sub] = false
+                }
+            } )
+        } else if (query.chapter > atChapter){
+            [...Array(subchapters)].forEach((c,i)=> {
+                let sub = `subchapter${i}`
+                initLockedStates[sub] = false
+            } )
+        } else {
+            [...Array(subchapters)].forEach((c,i)=> {
+                let sub = `subchapter${i}`
+                initLockedStates[sub] = true
+            } )
+        }
+    
+        setLocked(initLockedStates)
+    },[])
+    
 
 
     const color = {
@@ -108,13 +119,14 @@ const LesLayout = ({ children, type, title, subchapters }) => {
             </div>
 
             <VerticalDots className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center justify-center">
-                <ul className="p-8">
-                    <li className="my-28">
+                <ul className="p-8 relative flex justify-center flex-col">
+                    <li className="my-8 scale-75 origin-right transition-transform">
                         <Link href={`/${query.volume}/${query.chapter}/`}>
-                            <a className="rounded-full w-16 h-16 bg-white flex items-center justify-center">
+                            <a className="rounded-full w-20 h-20 bg-white flex items-center justify-center">
                                 Intro
                             </a>
                         </Link>
+                        <ul></ul>
                     </li>
                     {[...Array(subchapters)].map((_, idx) => {
                         let i = idx + 1;
@@ -123,12 +135,12 @@ const LesLayout = ({ children, type, title, subchapters }) => {
                             return (
                                 <li
                                     key={i}
-                                    className="my-28 origin-right transition-transform activeItem"
+                                    className={`my-8 scale-75 origin-right transition-transform activeItem ${isLocked[`subchapter${i}`] == true ? "unlocked" : ""}`}
                                 >
                                     <Link
                                         href={`/${query.volume}/${query.chapter}/${i}`}
                                     >
-                                        <a className="rounded-full w-16 h-16 bg-white flex items-center justify-center">
+                                        <a className="rounded-full w-20 h-20 bg-white flex items-center justify-center">
                                             {i}
                                         </a>
                                     </Link>
@@ -143,12 +155,12 @@ const LesLayout = ({ children, type, title, subchapters }) => {
                             return (
                                 <li
                                     key={i}
-                                    className="transition-all my-28 origin-right inactiveItem transition-transform hover:activeItem "
+                                    className={`transition-all my-8 scale-75 origin-right inactiveItem transition-transform hover:activeItem ${isLocked[`subchapter${i}`] == true ? "unlocked" : ""}`}
                                 >
                                     <Link
                                         href={`/${query.volume}/${query.chapter}/${i}`}
                                     >
-                                        <a className="rounded-full w-16 h-16 bg-white flex items-center justify-center">
+                                        <a className="rounded-full w-20 h-20 bg-white flex items-center justify-center">
                                             {i}
                                         </a>
                                     </Link>
@@ -161,6 +173,7 @@ const LesLayout = ({ children, type, title, subchapters }) => {
                             );
                         }
                     })}
+                    <li className="block absolute h-[70%] left-1/2 translate-x-1/2 top-28 w-0 border-dashed border-l-8 border-blue-light z-[-1]"></li>
                 </ul>
             </VerticalDots>
         </div>

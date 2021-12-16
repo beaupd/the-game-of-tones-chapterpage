@@ -52,7 +52,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    console.log(params)
+    // console.log(params)
     // props for layer in subchapter in chapter
     // const res = await fetch(`http://localhost:1337/api/les-contents?populate=*&filters[les]=theory&filters[subchapter_theory][subchapter]=${params.subchapter}`)
     // const res = await fetch(

@@ -62,7 +62,7 @@ export async function getStaticPaths() {
             // console.log(les.id)
             // console.log(attr.subchapter_theory.data)
             if (attr.subchapter_theory.data) {
-                console.log(attr.subchapter_theory.data)
+                // console.log(attr.subchapter_theory.data)
                 paths.push({
                     params: {
                         les: "/",
