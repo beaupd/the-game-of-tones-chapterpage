@@ -105,7 +105,7 @@ const Home = ({ data }) => {
 
 export async function getServerSideProps(context) {
     // console.log(context)
-    const res = await fetch("http://localhost:1337/api/chapters?populate=*");
+    const res = await fetch("https://got-cms.herokuapp.com/api/chapters?populate=*");
     const res_json = await res.json();
     
     

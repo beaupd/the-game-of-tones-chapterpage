@@ -25,7 +25,7 @@ export default ChapterIndex
 export async function getStaticPaths() {
 
     const res = await fetch(
-        "http://localhost:1337/api/chapters?populate=*&filters[id]=1"
+        "https://got-cms.herokuapp.com/api/chapters?populate=*&filters[id]=1"
     );
     const res_json = await res.json();
     const data = res_json.data;
@@ -55,11 +55,11 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     // console.log(params)
     // props for layer in subchapter in chapter
-    // const res = await fetch(`http://localhost:1337/api/les-contents?populate=*&filters[les]=theory&filters[subchapter_theory][subchapter]=${params.subchapter}`)
+    // const res = await fetch(`https://got-cms.herokuapp.com/api/les-contents?populate=*&filters[les]=theory&filters[subchapter_theory][subchapter]=${params.subchapter}`)
     // const res = await fetch(
-    //     `http://localhost:1337/api/les-contents?populate=*&filters[les]=${params.les}&filters[subchapter_${params.les}][subchapter]=${params.subchapter}`
+    //     `https://got-cms.herokuapp.com/api/les-contents?populate=*&filters[les]=${params.les}&filters[subchapter_${params.les}][subchapter]=${params.subchapter}`
     // );
-    const res = await fetch(`http://localhost:1337/api/chapters?populate=*&filters[chapter]=${params.chapter}`)
+    const res = await fetch(`https://got-cms.herokuapp.com/api/chapters?populate=*&filters[chapter]=${params.chapter}`)
     const res_json = await res.json();
     const data = res_json.data[0];
     // // console.log(data)
