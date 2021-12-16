@@ -14,7 +14,6 @@ import Pencil from "../components/icons/Pencil";
 import Gear from "../components/icons/Gear";
 import Running from "../components/icons/Running";
 import Bulb from "../components/icons/Bulb";
-import VerticalDots from "../components/navigators/VerticalDots"
 import SubChapterSubMenu from "../components/navigators/SubChapterSubMenu"
 
 const Styleguide = () => {

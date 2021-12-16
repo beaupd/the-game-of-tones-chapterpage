@@ -25,7 +25,7 @@ export default ChapterIndex
 export async function getStaticPaths() {
 
     const res = await fetch(
-        "http://localhost:1337/api/chapters?populate=*"
+        "http://localhost:1337/api/chapters?populate=*&filters[id]=1"
     );
     const res_json = await res.json();
     const data = res_json.data;
@@ -35,6 +35,7 @@ export async function getStaticPaths() {
 
     data.forEach((chapter) => {
         let attr = chapter.attributes
+        // console.log(attr)
         paths.push({
             params: {
                 chapter: attr.chapter.toString(),

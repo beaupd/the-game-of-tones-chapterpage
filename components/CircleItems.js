@@ -84,7 +84,7 @@ const CircleItems = ({ center, volume, variants, animate, circleChapter }) => {
                 index++;
             }
         }
-        console.log(circleChapter,newLockStates)
+        // console.log(circleChapter,newLockStates)
         setLockStates(newLockStates);
     }, [atItem]);
 

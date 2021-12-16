@@ -7,7 +7,7 @@ import VerticalDots from "../navigators/VerticalDots";
 import ContextProvider, { GlobalContext } from "../providers/ContextProvider";
 import { useContext, useState, useEffect } from "react";
 import Image from "next/image";
-import SubChapterSubMenu from "../navigators/SubchapterSubMenu";
+import SubChapterSubMenu from "../navigators/SubChapterSubMenu";
 
 const LesLayout = ({ children, type, title, subchapters }) => {
     const router = useRouter();
@@ -107,11 +107,12 @@ const LesLayout = ({ children, type, title, subchapters }) => {
             <div className="col-start-2 col-end-3 row-start-2 row-end-3 w-full h-full flex flex-col items-center pt-14 bg-white bg-opacity-75">
                 <div className="z-[-1]">
                     <Image
-                        src="/audio_visual_bg.png" //jpeg
+                        src="/audio_visual_bg.jpeg" //jpeg
                         layout="fill"
                         objectFit="cover"
                         // placeholder="blur"
                         // blurDataURL="/audio_visual_bg_low.jpeg"
+                        alt="visualisation of audio background"
                         className="z-[-1]"
                     />
                 </div>

@@ -18,11 +18,12 @@ const Home = ({ data }) => {
         <Main className="bg-black flex justify-center items-center flex-col">
             <div className="absolute w-full h-full left-0 top-0 z-0">
                 <Image
-                    src="/audio_visual_bg.png" //jpeg
+                    src="/audio_visual_bg.jpeg" //jpeg
                     layout="fill"
                     objectFit="cover"
-                    // placeholder="blur"
-                    // blurDataURL="/audio_visual_bg_low.jpeg"
+                    placeholder="blur"
+                    blurDataURL="/audio_visual_bg_low.jpeg"
+                    alt="visualisation of audio background"
                 />
                 <div className="absolute bg-white opacity-30 w-full h-full top-0 left-0"></div>
             </div>
@@ -43,6 +44,7 @@ const Home = ({ data }) => {
                         src="/bluegradient_circle.png"
                         layout="fill"
                         objectFit="cover"
+                        alt="gradient blue circle for volume index"
                     />
                     <h2 className="mt-20 text-2xl relative z-20 text-center text-blue">
                         <span className="uppercase">Volume 1</span> <br />

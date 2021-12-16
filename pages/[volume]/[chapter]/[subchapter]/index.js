@@ -56,33 +56,26 @@ export async function getStaticPaths() {
                 attr.subchapter_exercise.data
             );
         };
+        if (attr.from_chapter.data && isTrue()) {
+        // console.log(attr)
         // console.log(attr.subchapter_theory.data)
-        if (isTrue()) {
+        if (attr.les == "theory") {
             // console.log([attr.subchapter_theory.data, attr.subchapter_practice.data, attr.subchapter_action.data, attr.subchapter_exercise.data].map((i)=>{if(i){return(i)}}))
             // console.log(les.id)
             // console.log(attr.subchapter_theory.data)
-            if (attr.subchapter_theory.data) {
                 // console.log(attr.subchapter_theory.data)
                 paths.push({
                     params: {
-                        subchapter: isTrue().attributes.subchapter.toString(),
+                        les: "/",
+                        subchapter:
+                        attr.subchapter_theory.data.attributes.subchapter.toString(),
                         chapter:
                             attr.from_chapter.data.attributes.chapter.toString(),
                         volume: attr.from_volume.data.attributes.volume.toString(),
                     },
                 });
-            } else {
-                paths.push({
-                    params: {
-                        les: attr.les,
-                        subchapter: isTrue().attributes.subchapter.toString(),
-                        chapter:
-                            attr.from_chapter.data.attributes.chapter.toString(),
-                        volume: attr.from_volume.data.attributes.volume.toString(),
-                    },
-                });
-            }
         }
+    }
     });
 
     // const layers = [] // list of objects of all layers
