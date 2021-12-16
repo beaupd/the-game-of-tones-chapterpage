@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002F[volume]\u002F[chapter]\u002F[subchapter]\u002F[les]","\u002F[volume]\u002F[chapter]\u002F[subchapter]","\u002F[volume]\u002F[chapter]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
