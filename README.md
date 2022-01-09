@@ -1,11 +1,12 @@
 # Interactive webapp voor Game of Tones met Content Management System
 
+![Image of homepage project](https://github.com/beaupd/the-game-of-tones-chapterpage/blob/main/assets/tones.PNG)
+
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
   * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
+  * [Installatie & Gebruik](#installatie)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
