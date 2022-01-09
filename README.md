@@ -21,13 +21,12 @@ Hieronder staan alle geintegreerde of bedachte functies onder categoriën van pr
 - [x] Home navigatie waarmee je de verschillende chapters kan zien.
 - [x] Home navigatie waarmee je de verschillende subchapters kan zien van de chapters.
 - [x] Styleguide
-- [ ] Compleet werkende navigatie flow van de outlines van het project; Chapters, subchapter en de 4 lessen van de subchapters.
-- [ ] 
+- [x] Compleet werkende navigatie flow van de outlines van het project; Chapters, subchapter en de 4 lessen van de subchapters.
 #### Should have
 - [x] Home circle animatie ui-laag binnen en buiten.
-- [ ] Pad van subchapter naar subchapter om progress te weergeven binnen home navigatie.
+- [x] Pad van subchapter naar subchapter om progress te weergeven binnen home navigatie.
 - [ ] Progress State om de progressie van een gebruiker te weergeven.
-- [ ] 
+- [x] Achtergrond audio visualisatie op home.
 #### Could have
 - [x] Content management system.
 - [ ] Locked to unlocked states of subchapters.
