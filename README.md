@@ -54,9 +54,13 @@ $ npm run dev
 
 ## Bronnen
 [Tabler icons](https://tablericons.com/)
+
 [Next docs](https://nextjs.org/)
+
 [Tailwind docs](https://tailwindcss.com/)
+
 [Strapi docs](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html#open-source-contribution)
+
 
 ## Licentie
 MIT license
